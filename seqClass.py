@@ -12,18 +12,21 @@ if len(sys.argv) == 1:
     sys.exit(1)
 
 args = parser.parse_args()
-
-args.seq = args.seq.upper() 
+#convert string to upper case
+args.seq = args.seq.upper()
+#check if sequence contains the following pattern 
 if re.search('^[ACGTU]+$', args.seq):
     if re.search('T', args.seq):
-        print ('The sequence is DNA')
+        print ('The sequence is DNA') #if sequence has T is DNA
     elif re.search('U', args.seq):
-        print ('The sequence is RNA')
+        print ('The sequence is RNA') #if sequence has U is RNA
     else:
-        print ('The sequence can be DNA or RNA')
+        print ('The sequence can be DNA or RNA') 
 else:
     print ('The sequence is not DNA nor RNA')
 
+
+#To check if motif is in sequence (optional -m argument)
 if args.motif:
     args.motif = args.motif.upper()
     print(f'Motif search enabled: looking for motif "{args.motif}" in sequence "{args.seq}"... ', end = '')

@@ -14,10 +14,11 @@ if len(sys.argv) == 1:
 args = parser.parse_args()
 #convert string to upper case
 args.seq = args.seq.upper()
-#check if sequence contains the following pattern with classical nucleotides and some binary nucleotides code 
+#check if sequence contains the following pattern with classical nucleotides
+# added  binary nucleotides codes on fix 
 if re.search('^[ACGTUNRY]+$', args.seq):
     if 'T' in args.seq and 'U' in args.seq:
-        print('The sequence is invalid: contains both T and U.')
+        print('The sequence is invalid: contains both T and U.') #added on fix, sequence is invalid with this 2 nucleotides
     elif  re.search('T', args.seq):
         print ('The sequence is DNA') #if sequence has T is DNA
     elif re.search('U', args.seq):

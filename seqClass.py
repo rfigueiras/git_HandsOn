@@ -15,16 +15,16 @@ args = parser.parse_args()
 #convert string to upper case
 args.seq = args.seq.upper()
 #check if sequence contains the following pattern with classical nucleotides
-# added  binary nucleotides codes on fix 
+# added binary nucleotides codes N, R and Y on fix to make the code able to handle ambiguous code 
 if re.search('^[ACGTUNRY]+$', args.seq):
     if 'T' in args.seq and 'U' in args.seq:
-        print('The sequence is invalid: contains both T and U.') #added on fix, sequence is invalid with this 2 nucleotides
+        print('The sequence is invalid: contains both T and U.') #simultaneous presence of 'T' and 'U' make the seq invalid
     elif  re.search('T', args.seq):
         print ('The sequence is DNA') #if sequence has T is DNA
     elif re.search('U', args.seq):
         print ('The sequence is RNA') #if sequence has U is RNA
     else:
-        print ('The sequence can be DNA or RNA') 
+        print ('The sequence can be DNA or RNA') # without 'T' or 'U' we cannot distinguish between DNA and RNA 
 else:
     print ('The sequence is not DNA nor RNA')
 

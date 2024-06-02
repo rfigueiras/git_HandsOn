@@ -1,0 +1,6 @@
+[submodule "ggsashimi"]
+    path = ggsashimi
+    url = https://github.com/username/ggsashimi.git
+[submodule "nucleotide_percentage"]
+	path = nucleotide_percentage
+	url = https://github.com/rfigueiras/nucleotide_percentage.git

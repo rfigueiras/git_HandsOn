@@ -3,7 +3,7 @@
 
 ## move to folder and make directories to store files
 
-```
+```sh
 cd ATAC-seq/
 mkdir data
 mkdir analyses
@@ -12,7 +12,6 @@ ls
 cd data
 mkdir bed.files bigBed.files bigWig.files fastq.files tsv.files
 ```
- 
  
  ## download metadata
  ```
